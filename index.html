@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			margin: 0 auto;
+			width: 400px;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 36px;
+			margin-bottom: 20px;
+			color: #333;
+		}
+
+		label {
+			display: block;
+			font-size: 18px;
+			color: #333;
+			margin-bottom: 10px;
+		}
+
+		input[type="number"] {
+			display: block;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			width: 100%;
+			font-size: 18px;
+		}
+
+		button {
+			background-color: #008CBA;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #006F8E;
+		}
+
+		.result {
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Temperature Converter</h1>
+		<label>Enter Temperature in Celsius:</label>
+		<input type="number" id="celsius" placeholder="Enter temperature in Celsius" required>
+		<label>Enter Temperature in Fahrenheit:</label>
+		<input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit" required>
+		<button onclick="convert()">Convert</button>
+		<div class="result" id="result"></div>
+	</div>
+	<script>
+		function convert() {
+			var celsius = document.getElementById("celsius").value;
+			var fahrenheit = document.getElementById("fahrenheit").value;
+
+			if (celsius != "") {
+				var result = (celsius * 9/5) + 32;
+				document.getElementById("result").innerHTML = celsius + " Celsius = " + result + " Fahrenheit";
+			} else if (fahrenheit != "") {
+				var result = (fahrenheit - 32) * 5/9;
+				document.getElementById("result").innerHTML = fahrenheit + " Fahrenheit = " + result + " Celsius";
+			} else {
+				document.getElementById("result").innerHTML = "Please enter a temperature to convert";
+			}
+		}
+	</script>
+</body>
+</html>
