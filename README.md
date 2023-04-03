@@ -1,2 +1,2 @@
-# OIBGRIP
+# OIBSIP
 Task 3
